@@ -1,0 +1,58 @@
+accelerator:
+  ingress:
+    include: true
+  domain: tap.tap-namespace-provisioner-test.tapdemo.vmware.com
+  server:
+    service_type: ClusterIP
+buildservice:
+  kp_default_repository: tapacr.azurecr.io/tap-namespace-provisioner-test/build-service
+  kp_default_repository_password: WgKRm6bmV2pEHVZ29ipjI9+YSTIINyuN
+  kp_default_repository_username: tapacr
+ceip_policy_disclosed: true
+contour:
+  envoy:
+    service:
+      type: LoadBalancer
+grype:
+  namespace: my-apps
+  targetImagePullSecret: registry-credentials
+learningcenter:
+  ingressDomain: learning-center.tap.tap-namespace-provisioner-test.tapdemo.vmware.com
+ootb_supply_chain_basic:
+  gitops:
+    ssh_secret: ""
+  registry:
+    repository: tap-namespace-provisioner-test/apps-02-12-2022-14-03-18-630059151
+    server: tapacr.azurecr.io
+ootb_supply_chain_testing:
+  gitops:
+    ssh_secret: ""
+  registry:
+    repository: tap-namespace-provisioner-test/apps-02-12-2022-14-03-18-630059151
+    server: tapacr.azurecr.io
+ootb_supply_chain_testing_scanning:
+  gitops:
+    ssh_secret: ""
+  registry:
+    repository: tap-namespace-provisioner-test/apps-02-12-2022-14-03-18-630059151
+    server: tapacr.azurecr.io
+profile: full
+supply_chain: testing_scanning
+cnrs:
+  ingress_issuer: ""
+  domain_name: tap.tap-namespace-provisioner-test.tapdemo.vmware.com
+tap_gui:
+  ingressEnabled: true
+  ingressDomain: tap.tap-namespace-provisioner-test.tapdemo.vmware.com
+  service_type: ClusterIP
+  # app_config:
+  #     backend:
+  #         baseUrl: http://tap-gui.tap.tap-namespace-provisioner-test.tapdemo.vmware.com
+  #         cors:
+  #             origin: http://tap-gui.tap.tap-namespace-provisioner-test.tapdemo.vmware.com
+  #     app:
+  #         baseUrl: http://tap-gui.tap.tap-namespace-provisioner-test.tapdemo.vmware.com
+metadata_store:
+  ns_for_export_app_cert: "*"
+appsso:
+  domain_name: tap.tap-namespace-provisioner-test.tapdemo.vmware.com
