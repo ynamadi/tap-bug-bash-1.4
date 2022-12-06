@@ -6,7 +6,7 @@ metadata:
     apps.tanzu.vmware.com/pipeline: test
     apps.tanzu.vmware.com/language: golang
   name: golang-test-pipeline
-  namespace: #@ data.values.tap.devNamespace
+  namespace: #@ data.values.name
 spec:
   params:
   - name: source-url
